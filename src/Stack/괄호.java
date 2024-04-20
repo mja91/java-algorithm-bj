@@ -5,12 +5,13 @@ import java.util.Stack;
 
 public class 괄호 {
 
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int num = scanner.nextInt();
+        int num = sc.nextInt();
 
         for (int i=0; i<num; i++) {
-            String str = scanner.next();
+            String str = sc.next();
             Stack stack = new Stack();
             for (int j=0; j<str.length(); j++) {
                 char chr = str.charAt(j);
@@ -30,5 +31,7 @@ public class 괄호 {
                 System.out.println("NO");
             }
         }
+
+        sc.close();
     }
 }

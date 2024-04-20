@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class 단어_공부 {
 
+    static Scanner sc = new Scanner(System.in);
+
     public static void main(String[] args) {
         int[] arr = new int[26];
 
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.next();
+        String input = sc.next();
 
         for (int i=0; i<input.length(); i++) {
             char s = input.charAt(i);
@@ -30,5 +31,7 @@ public class 단어_공부 {
             }
         }
         System.out.println(chr);
+
+        sc.close();
     }
 }

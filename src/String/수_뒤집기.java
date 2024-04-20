@@ -21,6 +21,8 @@ public class 수_뒤집기 {
                 System.out.println("NO");
             }
         }
+
+        sc.close();
     }
 
     public static boolean check(String str) {

@@ -15,5 +15,7 @@ public class 진수_문자열 {
         } else {
             System.out.println(str);
         }
+
+        sc.close();
     }
 }

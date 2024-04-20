@@ -16,6 +16,8 @@ public class 그룹_단어_체커 {
         }
 
         System.out.println(count);
+
+        sc.close();
     }
 
     public static boolean check() {
