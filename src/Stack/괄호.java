@@ -9,6 +9,7 @@ public class 괄호 {
 
     public static void main(String[] args) {
         int num = sc.nextInt();
+        boolean checker = true;
 
         for (int i=0; i<num; i++) {
             String str = sc.next();
@@ -18,14 +19,13 @@ public class 괄호 {
                 if (chr == '(') {
                     stack.push(chr);
                 } else if (stack.empty()) {
-                    System.out.println("NO");
-                    break;
+                    checker = false;
                 } else {
                     stack.pop();
                 }
             }
 
-            if (stack.empty()) {
+            if (checker && stack.empty()) {
                 System.out.println("YES");
             } else {
                 System.out.println("NO");
