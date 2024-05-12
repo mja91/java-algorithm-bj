@@ -18,20 +18,23 @@ public class Main {
     }
 
     private static long solve(int N, String[] students, String[] viewers) {
-        int superViewerQuota = Integer.parseInt(viewers[0]);
-        int semiViewerQuota = Integer.parseInt(viewers[1]);
+        long superViewerQuota = Integer.parseInt(viewers[0]);
+        long semiViewerQuota = Integer.parseInt(viewers[1]);
 
-        long totalViewerCount = 0;
-        for (int i = 0; i < N; i++) {
-            int studentCount = Integer.parseInt(students[i]);
-            totalViewerCount++;
+        long minCount = 0;
+        for (int i=0; i<N; i++) {
+            long studentCount = Integer.parseInt(students[i]);
+            minCount++;
 
             if (studentCount > superViewerQuota) {
-                int remainingStudents = studentCount - superViewerQuota;
-                totalViewerCount += (remainingStudents + semiViewerQuota - 1) / semiViewerQuota;
+                long remainingStudentCount = studentCount - superViewerQuota;
+                minCount += remainingStudentCount / semiViewerQuota;
+                if (remainingStudentCount % semiViewerQuota != 0) {
+                    minCount++;
+                }
             }
         }
 
-        return totalViewerCount;
+        return minCount;
     }
 }
